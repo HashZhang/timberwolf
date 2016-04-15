@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.timberwolf</groupId>
+    <artifactId>timberwolf</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.0-DEV</version>
+    <modules>
+        <module>timberwolf-common</module>
+    </modules>
+
+    <properties>
+        <project_version>0.0.0-DEV</project_version>
+
+        <!-- dependencies -->
+        <!-- NIO framework -->
+        <netty_version>5.0.0.Alpha2</netty_version>
+        <!-- code framework -->
+        <guava_version>19.0</guava_version>
+        <!-- test -->
+        <junit_version>4.12</junit_version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- NIO framework -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty_version}</version>
+            </dependency>
+            <!-- code framework -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava_version}</version>
+            </dependency>
+            <!-- test -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit_version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
