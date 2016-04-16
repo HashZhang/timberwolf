@@ -18,7 +18,7 @@ import java.nio.ByteBuffer;
  *
  * @author Hash Zhang
  * @version 0.0.0
- * @see http://dev.mysql.com/doc/internals/en/mysql-packet.html
+ * @see @http://dev.mysql.com/doc/internals/en/mysql-packet.html
  */
 public abstract class MySQLPacket {
     protected final static int PAYLOAD_LENGTH_LENGTH = 3;
@@ -35,7 +35,6 @@ public abstract class MySQLPacket {
     protected void encode(){
         ByteBuffer byteBuffer = ByteBuffer.allocate(4);
         Int.length3(byteBuffer,payload_Length);
-        Int.length1(byteBuffer,sequenceId);
     }
 
     protected void decode(){

@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
  * Factory for encoding,decoding and generate OK_Packet
  * @author Hash Zhang
  * @version 0.0.0
- * @see http://dev.mysql.com/doc/internals/en/mysql-packet.html
+ * @see @http://dev.mysql.com/doc/internals/en/mysql-packet.html
  */
 public class OK_PacketFactory {
 

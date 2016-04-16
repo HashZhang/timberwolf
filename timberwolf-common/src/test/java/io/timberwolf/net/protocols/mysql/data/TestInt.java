@@ -17,26 +17,41 @@ public class TestInt {
 
     @Test
     public void testLength1() {
-        int a = 14;
+        int a = 14,b=15;
         ByteBuffer byteBuffer = ByteBuffer.allocate(this.byteBuffer.capacity() + 1);
-        System.out.println(this.byteBuffer.capacity() + 1);
+        this.byteBuffer.flip();
         byteBuffer.put(this.byteBuffer);
-        Int.length1(byteBuffer, a);
+        Int.writeLength1(byteBuffer, a);
         this.byteBuffer = byteBuffer;
         byteBuffer = ByteBuffer.allocate(this.byteBuffer.capacity() + 1);
-        System.out.println(this.byteBuffer.capacity() + 1);
+        this.byteBuffer.flip();
         byteBuffer.put(this.byteBuffer);
-        Int.length1(byteBuffer, a);
+        Int.writeLength1(byteBuffer, b);
         this.byteBuffer = byteBuffer;
         this.byteBuffer.flip();
-        System.out.println(this.byteBuffer.position());
-        int b = Int.length1(this.byteBuffer);
-        System.out.println("b:"+b);
-        System.out.println(this.byteBuffer.position());
-        this.byteBuffer.flip();
-        int c = Int.length1(this.byteBuffer);
-        System.out.println("c:"+c);
-        Assert.assertEquals(a, b);
+        int c = Int.readLength1(this.byteBuffer);
+        int d = Int.readLength1(this.byteBuffer);
         Assert.assertEquals(a, c);
+        Assert.assertEquals(b, d);
+    }
+
+    @Test
+    public void testLength2() {
+        int a = 0x100,b=0x101;
+        ByteBuffer byteBuffer = ByteBuffer.allocate(this.byteBuffer.capacity() + 2);
+        this.byteBuffer.flip();
+        byteBuffer.put(this.byteBuffer);
+        Int.writeLength2(byteBuffer, a);
+        this.byteBuffer = byteBuffer;
+        byteBuffer = ByteBuffer.allocate(this.byteBuffer.capacity() + 2);
+        this.byteBuffer.flip();
+        byteBuffer.put(this.byteBuffer);
+        Int.writeLength2(byteBuffer, b);
+        this.byteBuffer = byteBuffer;
+        this.byteBuffer.flip();
+        int c = Int.readLength2(this.byteBuffer);
+        int d = Int.readLength2(this.byteBuffer);
+        Assert.assertEquals(a, c);
+        Assert.assertEquals(b, d);
     }
 }
