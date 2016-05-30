@@ -1,4 +1,4 @@
-package io.timberwolf.net.protocols.mysql.data;
+package io.timberwolf.common.protocol.mysql.data;
 
 import com.google.common.base.Preconditions;
 
@@ -16,7 +16,7 @@ public class Str {
     public static int lengthEncoded(ByteBuffer buffer, String string, String charSet) throws UnsupportedEncodingException {
         Preconditions.checkNotNull(string);
         int length = string.getBytes(charSet).length;
-        length += Int.lengthEncoded(buffer,length);
+        length += Int.writeLengthEncoded(buffer,length);
         buffer.put(string.getBytes(charSet));
         return length;
     }

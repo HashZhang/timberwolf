@@ -1,6 +1,6 @@
-package io.timberwolf.net.protocols.mysql.packet;
+package io.timberwolf.common.protocol.mysql.packet;
 
-import io.timberwolf.net.protocols.mysql.data.Int;
+import io.timberwolf.common.protocol.mysql.data.Int;
 
 import java.nio.ByteBuffer;
 
@@ -34,7 +34,8 @@ public abstract class MySQLPacket {
 
     protected void encode(){
         ByteBuffer byteBuffer = ByteBuffer.allocate(4);
-        Int.length3(byteBuffer,payload_Length);
+        Int.writeLength3(byteBuffer,payload_Length);
+        Int.writeLength1(byteBuffer,sequenceId);
     }
 
     protected void decode(){

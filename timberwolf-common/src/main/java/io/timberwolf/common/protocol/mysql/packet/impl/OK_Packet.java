@@ -1,8 +1,6 @@
-package io.timberwolf.net.protocols.mysql.packet.impl;
+package io.timberwolf.common.protocol.mysql.packet.impl;
 
-import io.timberwolf.net.protocols.mysql.packet.MySQLPacket;
-
-import java.nio.ByteBuffer;
+import io.timberwolf.common.protocol.mysql.packet.MySQLPacket;
 
 /**
  * OK_Packet
