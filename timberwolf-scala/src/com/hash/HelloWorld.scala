@@ -139,7 +139,9 @@ package com {
         val arrayTest = new array;
         arrayTest.testArray1();
         printSeparator();
-        
+        val listTest = new list;
+        listTest.testList1()
+        printSeparator()
       }
 
 
