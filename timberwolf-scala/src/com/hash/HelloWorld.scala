@@ -145,6 +145,12 @@ package com {
         val tupleTest = new tuple
         tupleTest.tupleTest1()
         printSeparator()
+        val setTest = new set
+        setTest.setTest1()
+        printSeparator()
+        val mapTest = new map
+        mapTest.mapTest1()
+        printSeparator()
       }
 
 
