@@ -142,6 +142,9 @@ package com {
         val listTest = new list;
         listTest.testList1()
         printSeparator()
+        val tupleTest = new tuple
+        tupleTest.tupleTest1()
+        printSeparator()
       }
 
 
