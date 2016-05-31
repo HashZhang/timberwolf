@@ -114,14 +114,36 @@ package com {
         printSeparator();
         println(strcat("zhx")("hash"));
         printSeparator();
-        var date:Date = new Date;
-        var logWithDate = log(date, _:String);
+        var date: Date = new Date;
+        var logWithDate = log(date, _: String);
         logWithDate("Hello");
         printSeparator();
-
+        val floatVal = 1.203f;
+        val intVal = 10;
+        val stringVal = "zhxhash";
+        val fs = printf("floatVal is %f,intVal is %d,stringVal is %s", floatVal, intVal, stringVal);
+        println(fs);
+        printSeparator();
+        val myList1 = Array(1.2, 3.4, 5.6, 7.8);
+        val myList2 = Array[Double](1, 2, 3, 4);
+        val myList12 = Array.concat[Double](myList1, myList2);
+        for (element <- myList12) {
+          println(element);
+        }
+        printSeparator();
+        val myList3 = Range(10,20,3);
+        for (element <- myList3) {
+          println(element);
+        }
+        printSeparator();
+        val arrayTest = new array;
+        arrayTest.testArray1();
+        printSeparator();
+        
       }
 
-      def log(date:Date, message:String): Unit ={
+
+      def log(date: Date, message: String): Unit = {
         println(date + "------" + message);
       }
 
