@@ -151,6 +151,10 @@ package com {
         val mapTest = new map
         mapTest.mapTest1()
         printSeparator()
+        println(StaticAccumulator.calculate("zhxhash"))
+        printSeparator()
+        operator.operatorTest1()
+        printSeparator()
       }
 
 

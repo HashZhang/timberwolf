@@ -12,6 +12,8 @@
         <module>timberwolf-common</module>
         <module>timberwolf-cache</module>
         <module>timberwolf-akka</module>
+        <module>timberwolf-guava</module>
+        <module>timberwolf-disruptor</module>
     </modules>
 
     <properties>
@@ -41,6 +43,8 @@
         <akka_version>2.4.6</akka_version>
         <!--protobuf-->
         <protobuf_version>2.6.1</protobuf_version>
+        <!--disruptor-->
+        <disruptor_version>3.3.4</disruptor_version>
     </properties>
 
     <dependencyManagement>
@@ -289,6 +293,11 @@
                 <version>${protobuf_version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>${disruptor_version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
